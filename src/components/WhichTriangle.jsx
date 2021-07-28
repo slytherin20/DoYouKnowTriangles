@@ -1,13 +1,12 @@
-import { useState } from "react";
 import { Link, Route, useRouteMatch } from "react-router-dom";
 import Cards from "./Cards.jsx";
-import Score from "./Score";
 
 function WhichTriangle(){
 
     const {path,url} = useRouteMatch()
     return(
         <div className="game-4">
+             <Link to="/"><button className="back-btn">Go Back</button></Link>
             <div className="description">
                 <h2 className="heading">Which Triangle Is This?</h2>
                 <p>Three angles will be displayed and you have to answer whether it is a right-angled triangle, acute-angled triangle or an obtuse-angled triangle</p>
@@ -24,7 +23,7 @@ function WhichTriangle(){
 
 function ShowButton({url}){
     return(
-        <button classame="quiz-btn"><Link to={`${url}/begin`}>Begin</Link></button>
+        <button classNme="quiz-btn"><Link to={`${url}/begin`}>Begin</Link></button>
     )
 }
 

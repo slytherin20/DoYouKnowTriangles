@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function IsItATriangle(){
     const [angle1,setAngle1] = useState(0);
@@ -27,6 +28,7 @@ function IsItATriangle(){
     }
 return(
    <div className="game-1">
+       <Link to="/"><button className="back-btn">Go Back</button></Link>
        <div className="description">
            <h2 className="heading">Is It A Triangle?</h2>
            <p>Enter the three angles and we will tell you if it forms a triangle or not.</p>

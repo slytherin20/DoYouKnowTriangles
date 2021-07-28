@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 function FindTheSide(){
     const [a,setA] = useState(0);
@@ -17,6 +18,7 @@ function FindTheSide(){
 
     return(
         <div className="game-2">
+             <Link to="/"><button className="back-btn">Go Back</button></Link>
             <div className="description">
                 <h2 className="heading">Find the Hypotenuse</h2>
                 <p>Calculates the hypotenuse of the triangle for you.</p>

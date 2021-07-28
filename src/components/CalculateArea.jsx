@@ -16,6 +16,7 @@ function CalculateArea(){
 
     return(
         <div className="game-3">
+             <Link to="/"><button className="back-btn">Go Back</button></Link>
             <div className="description">
                 <h2 className="heading">Area Calculator</h2>
                 <p>Calculates the area of triangle depending upon parameters given.</p>
