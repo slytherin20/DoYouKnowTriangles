@@ -12,3 +12,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.options{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+.option{
+  width:200px;
+  height:60px;
+  border:solid 1px black;
+  border-radius: 5%;
+  cursor:pointer;
+}
+.option:active{
+  transform: scale(1.1);
+  background-color: green;
+}
+.end-game,.quiz-btn{
+  cursor:pointer;
+  width: 100px;
+  height:40px;
+  border-radius:8%;
+  background-color: rebeccapurple;
+  color:white;
+}
+.end-game:active,.quiz-btn:active{
+  transform: scale(1.01);
+
+}
+.hidden{
+  display: none;
+}

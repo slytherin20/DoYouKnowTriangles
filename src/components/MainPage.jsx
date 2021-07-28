@@ -19,7 +19,7 @@ return(
                 <Link to="/CalculateArea">Area Calculator</Link>
             </li>
             <li key="game-4">
-                <Link to="/IsItTriangle">Is It Triangle?</Link>
+                <Link to="/WhichTriangle">Which Triangle Is This?</Link>
             </li>
         </ul>
     </div>
