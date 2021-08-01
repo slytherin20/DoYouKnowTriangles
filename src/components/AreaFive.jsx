@@ -31,11 +31,11 @@ return(
        <form className="area-5" onSubmit={calculateArea}>
            <label className="side-1">
                Equal Side:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} required />
            </label>
            <label className="side-2">
                Base:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} required />
            </label>
            <button className="btn">Calculate</button>
        </form>

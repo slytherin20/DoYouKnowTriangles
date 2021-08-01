@@ -48,7 +48,7 @@ code {
 .score-card{
   width:50%;
   margin:auto;
-  background-color: rgb(255, 9, 255);
+  background-color: black;
   color:white;
 }
 .end-game:active,.quiz-btn:active{

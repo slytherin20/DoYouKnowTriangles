@@ -33,15 +33,15 @@ return(
        <form className="area-3" onSubmit={calculateArea}>
            <label className="side-1">
                a:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} required />
            </label>
            <label className="side-2">
                b:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} required />
            </label>
            <label className="angle-1">
                Angle (in degrees):
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"d")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"d")} required />
            </label>
            <button className="btn">Calculate</button>
        </form>

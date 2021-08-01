@@ -29,7 +29,7 @@ return(
        <form className="area-4" onSubmit={calculateArea}>
            <label className="sides">
                Sides:
-            <input type="number" step="any" onChange={changeValues} />
+            <input type="number" step="any" onChange={changeValues} required />
            </label>
            <button className="btn">Calculate</button>
        </form>

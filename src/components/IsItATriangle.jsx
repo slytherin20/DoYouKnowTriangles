@@ -40,15 +40,15 @@ return(
        <form className="input-box-1" onSubmit={checkValues}>
            <label className="angle 1">
                Angle 1:
-            <input type="number" step="any" onChange={(e)=>setAngle(e,1)} />
+            <input type="number" required step="any" onChange={(e)=>setAngle(e,1)} />
            </label>
            <label className="angle 2">
                Angle 2:
-            <input type="number" atep="any" onChange={(e)=>setAngle(e,2)}/>
+            <input type="number" required step="any" onChange={(e)=>setAngle(e,2)}/>
            </label>
            <label className="angle 3">
                Angle 3:
-            <input type="number" step="any" onChange={(e)=>setAngle(e,3)}/>
+            <input type="number"  required step="any" onChange={(e)=>setAngle(e,3)}/>
            </label>
            <button className="btn">Check</button>
        </form>

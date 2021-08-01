@@ -22,7 +22,7 @@ function Score(props){
         }
         else if(score>=1){
             setStatement("It's okay, you can try again");
-            setColor("blue");
+            setColor("yellow");
         }
     }
     return (

@@ -31,11 +31,11 @@ return(
        <form className="area-1" onSubmit={calculateArea}>
            <label className="base">
                Base:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} required />
            </label>
            <label className="height">
                Height:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"h")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"h")} required />
            </label>
            <button className="btn">Calculate</button>
        </form>

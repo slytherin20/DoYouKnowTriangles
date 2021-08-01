@@ -31,11 +31,11 @@ function FindTheSide(){
             <form className="input-box-2" onSubmit={calculate} >
                 <label className="side 1">
                     a=
-                    <input type="number" step="any" onChange = {(e)=>changeValue(e,"a")} />
+                    <input type="number" required step="any" onChange = {(e)=>changeValue(e,"a")} />
                 </label>
                 <label className="side 2">
                     b=
-                    <input type="number" step="any" onChange = {(e)=>changeValue(e,"b")}/>
+                    <input type="number" required step="any" onChange = {(e)=>changeValue(e,"b")}/>
                 </label>
                 <button className="btn">Calculate</button>
             </form>

@@ -47,15 +47,15 @@ return(
        <form className="area-2" onSubmit={calculateArea}>
            <label className="side-1">
                a:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} required />
            </label>
            <label className="side-2">
                b:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} required />
            </label>
            <label className="side-3">
                c:
-            <input type="number" step="any" onChange={(e)=>changeValues(e,"c")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"c")} required />
            </label>
            <button className="btn">Calculate</button>
        </form>
