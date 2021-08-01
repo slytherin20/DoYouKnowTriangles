@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Route, Link, useRouteMatch, Switch } from "react-router-dom";
 import PathFind from "./PathFind";
-import Triangle from "./Triangle";
 
 function CalculateArea(){
     const [option,setOption] = useState("1");
