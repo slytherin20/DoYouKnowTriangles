@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 function IsItATriangle(){
+    const resultBox = useRef(null);
     const [angle1,setAngle1] = useState(0);
     const [angle2,setAngle2] = useState(0);
     const [angle3,setAngle3] = useState(0);
@@ -21,10 +23,12 @@ function IsItATriangle(){
     function success(){
         setResult("Yes! It is definately a triangle.");
         setImage("https://media.giphy.com/media/3o751QmaltUM6klxYs/giphy.gif");
+        resultBox.current.scrollIntoView()
     }
     function failure(){
         setResult("Sorry! It is not a triangle.");
         setImage("https://media.giphy.com/media/gnE4FFhtFoLKM/giphy.gif");
+        resultBox.current.scrollIntoView()
     }
 return(
    <div className="game-1">
@@ -36,22 +40,22 @@ return(
        <form className="input-box-1" onSubmit={checkValues}>
            <label className="angle 1">
                Angle 1:
-            <input type="number" onChange={(e)=>setAngle(e,1)} />
+            <input type="number" step="any" onChange={(e)=>setAngle(e,1)} />
            </label>
            <label className="angle 2">
                Angle 2:
-            <input type="number" onChange={(e)=>setAngle(e,2)}/>
+            <input type="number" atep="any" onChange={(e)=>setAngle(e,2)}/>
            </label>
            <label className="angle 3">
                Angle 3:
-            <input type="number" onChange={(e)=>setAngle(e,3)}/>
+            <input type="number" step="any" onChange={(e)=>setAngle(e,3)}/>
            </label>
            <button className="btn">Check</button>
        </form>
-       <div className="result-box">
-        <h3>{result}</h3>
-       {image && <img src={image} alt="result-pic" /> }
-       </div>
+       <div className="result-box" ref={resultBox}>
+            <h3>{result}</h3>
+             {image && <img src={image} alt="result-pic" className="image-1"/> }
+        </div>
    </div>
 )
 }

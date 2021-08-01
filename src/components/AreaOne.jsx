@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function AreaOne(){
+    const resultBox = useRef(null);
     const [base,setBase] = useState(0);
     const [height,setHeight] = useState(0);
     const [area,setArea] = useState("");
@@ -21,6 +22,7 @@ function AreaOne(){
             setArea("")
             setText("Please enter correct base and height.")
         }
+        resultBox.current.scrollIntoView()
     }
 
 return(
@@ -29,15 +31,15 @@ return(
        <form className="area-1" onSubmit={calculateArea}>
            <label className="base">
                Base:
-            <input type="number" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
            </label>
            <label className="height">
                Height:
-            <input type="number" onChange={(e)=>changeValues(e,"h")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"h")} />
            </label>
            <button className="btn">Calculate</button>
        </form>
-       <div className="result-box">
+       <div className="result-box" ref={resultBox}>
            <p><b>{text}</b> {area}</p>
        </div>
    </div>

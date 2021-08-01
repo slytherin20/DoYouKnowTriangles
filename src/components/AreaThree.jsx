@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function AreaThree(){
+    const resultBox = useRef(null);
     const [a,setA] = useState(0);
     const [b,setB] = useState(0);
     const [angle,setAngle] = useState(0);
@@ -22,6 +23,7 @@ function AreaThree(){
             setArea("")
             setText("Please enter correct sides and angle.")
         }
+        resultBox.current.scrollIntoView()
     }
 
 
@@ -31,19 +33,19 @@ return(
        <form className="area-3" onSubmit={calculateArea}>
            <label className="side-1">
                a:
-            <input type="number" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
            </label>
            <label className="side-2">
                b:
-            <input type="number" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
            </label>
            <label className="angle-1">
                Angle (in degrees):
-            <input type="number" onChange={(e)=>changeValues(e,"d")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"d")} />
            </label>
            <button className="btn">Calculate</button>
        </form>
-       <div className="result-box">
+       <div className="result-box" ref={resultBox}>
            <p><b>{text}</b> {area}</p>
        </div>
    </div>

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 function AreaFive(){
+    const resultBox = useRef(null);
     const [a,setA] = useState(0);
     const [b,setB] = useState(0);
     const [area,setArea] = useState("");
@@ -20,6 +21,7 @@ function AreaFive(){
             setArea("")
             setText("Please enter correct sides.")
         }
+        resultBox.current.scrollIntoView()
     }
 
 
@@ -29,15 +31,15 @@ return(
        <form className="area-5" onSubmit={calculateArea}>
            <label className="side-1">
                Equal Side:
-            <input type="number" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
            </label>
            <label className="side-2">
                Base:
-            <input type="number" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
            </label>
            <button className="btn">Calculate</button>
        </form>
-       <div className="result-box">
+       <div className="result-box" ref={resultBox}>
            <p><b>{text}</b> {area}</p>
        </div>
    </div>

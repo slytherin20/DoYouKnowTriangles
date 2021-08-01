@@ -32,7 +32,6 @@ function Cards(){
         }]
 
         function optionClicked(option){
-            console.log(option)
             setFinalOption(option)
         }
         function changeIndex(){

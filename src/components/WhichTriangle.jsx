@@ -23,7 +23,7 @@ function WhichTriangle(){
 
 function ShowButton({url}){
     return(
-        <button classNme="quiz-btn"><Link to={`${url}/begin`}>Begin</Link></button>
+        <button className="btn"><Link to={`${url}/begin`}>Begin</Link></button>
     )
 }
 

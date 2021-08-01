@@ -1,40 +1,43 @@
 import { Link } from "react-router-dom";
+import Triangle from "./Triangle";
 
 function MainPage(){
 return(
     <>
-    <div className="background-anim">
-        <div className="triangle-1">
-            <div className="triangle-1-white">
-            <div className="triangle-2">
-                <div className="triangle-2-white">
-                    <div className="triangle-3">
-                        <div className="triangle-3-white"></div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
+    <Triangle />
     <div className="description">
     <h1 className="heading">Do You Know Triangles?</h1>
     <p>A series of fun games to check your knowlege on triangles.</p>
     </div>
     <div className="games">
+        <div className="box-1">
         <ul className="games-list">
-            <li key="game-1">
-                <Link to="/IsItATriangle">Is It A Triangle?</Link>
+        <Link to="/IsItATriangle">
+            <li key="game-1" className="gamelist-1">
+                Is It A Triangle?
             </li>
-            <li key="game-2">
-                <Link to="/FindTheHypotenuse">Find The Hypotenuse</Link>
+        </Link>
+        <Link to="/FindTheHypotenuse">
+            <li key="game-2" className="gamelist-2">
+                Find The Hypotenuse
             </li>
-            <li key="game-3">
-                <Link to="/CalculateArea">Area Calculator</Link>
-            </li>
-            <li key="game-4">
-                <Link to="/WhichTriangle">Which Triangle Is This?</Link>
-            </li>
+            </Link>
         </ul>
+        </div>
+        <div className="box-2">
+        <ul className="games-list">
+        <Link to="/CalculateArea">
+            <li key="game-3"  className="gamelist-3">
+               Area Calculator
+            </li>
+            </Link>
+            <Link to="/WhichTriangle">
+            <li key="game-4"  className="gamelist-4">
+               Which Triangle Is This?
+            </li>
+            </Link>
+        </ul>
+        </div>
     </div>
     </>
 )

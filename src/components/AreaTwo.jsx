@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function AreaTwo(){
+    const resultBox = useRef(null);
     const [a,setA] = useState(0);
     const [b,setB] = useState(0);
     const [c,setC] = useState(0);
@@ -36,6 +37,7 @@ function AreaTwo(){
             setArea("")
             setText("Please enter sides greater than zero")
         }
+        resultBox.current.scrollIntoView()
     }
 
 
@@ -45,19 +47,19 @@ return(
        <form className="area-2" onSubmit={calculateArea}>
            <label className="side-1">
                a:
-            <input type="number" onChange={(e)=>changeValues(e,"a")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"a")} />
            </label>
            <label className="side-2">
                b:
-            <input type="number" onChange={(e)=>changeValues(e,"b")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"b")} />
            </label>
            <label className="side-3">
                c:
-            <input type="number" onChange={(e)=>changeValues(e,"c")} />
+            <input type="number" step="any" onChange={(e)=>changeValues(e,"c")} />
            </label>
            <button className="btn">Calculate</button>
        </form>
-       <div className="result-box">
+       <div className="result-box" ref={resultBox} >
            <p><b>{ptext}</b>{perimeter}</p>
            <p><b>{text}</b> {area}</p>
        </div>
