@@ -17,7 +17,7 @@ function Cards(){
          },
         {
         ques:"Angle1: 67°, Angle2: 34°, Angle3: 79°",
-        ans: 2
+        ans: 1
         },{
         ques:"Angle1: 90°, Angle2: 80°, Angle3: 100°",
         ans: 3
@@ -37,6 +37,7 @@ function Cards(){
         function changeIndex(){
             if(finalOption===QA[index].ans){
                 setScore(score+1)
+                console.log(score)
             }
             if(index===4){
                 moveIndex(5)
@@ -49,6 +50,9 @@ function Cards(){
         }
         function saveResponse(e){
            e.preventDefault()
+           if(finalOption===QA[index].ans){
+            setScore(score+1)
+             }
             moveIndex(-1)
         }
     return(
