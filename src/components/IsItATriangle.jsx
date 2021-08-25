@@ -18,18 +18,26 @@ function IsItATriangle(){
     function checkValues(e){
         e.preventDefault();
         let sum = angle1+angle2+angle3;
-        (sum)===180?success():failure()
+        (sum===180)?success():failure()
     }
-    function success(){
+
+    async function success(){
         setResult("Yes! It is definately a triangle.");
-        setImage("https://media.giphy.com/media/3o751QmaltUM6klxYs/giphy.gif");
-        resultBox.current.scrollIntoView()
-    }
-    function failure(){
+        await setImage("https://media.giphy.com/media/3o751QmaltUM6klxYs/giphy.gif");
+        scrollToResult()
+        }
+
+    async function failure(){
         setResult("Sorry! It is not a triangle.");
-        setImage("https://media.giphy.com/media/gnE4FFhtFoLKM/giphy.gif");
-        resultBox.current.scrollIntoView()
+        await setImage("https://media.giphy.com/media/gnE4FFhtFoLKM/giphy.gif");
+        scrollToResult()
     }
+
+    function scrollToResult(){
+        resultBox.current.scrollIntoView({ behavior: "smooth"})
+
+    }
+
 return(
    <div className="game-1">
        <Link to="/"><button className="back-btn">Go Back</button></Link>

@@ -9,17 +9,17 @@ function AreaFour(){
         setA(Number(e.target.value))
     }
 
-    function calculateArea(e){
+    async function calculateArea(e){
         e.preventDefault();
         if(a>0){
             setText("Area: ")
-            setArea(((a**2)*Math.sqrt(3)/4).toFixed(2))
+            await setArea(((a**2)*Math.sqrt(3)/4).toFixed(2))
         }
         else{
             setArea("")
-            setText("Please enter valid sides")
+            await setText("Please enter valid sides")
         }
-        resultBox.current.scrollIntoView()
+        resultBox.current.scrollIntoView({behavior:"smooth"})
     }
 
 

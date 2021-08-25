@@ -15,7 +15,7 @@ function AreaTwo(){
                   :(side==="b"?setB(Number(e.target.value)):setC(Number(e.target.value)))
     }
 
-    function calculateArea(e){
+    async function calculateArea(e){
         e.preventDefault()
         if(a>0 && b>0 && c>0){
             setPText("Semi-perimeter:");
@@ -26,18 +26,18 @@ function AreaTwo(){
             let x = (s-a);
             let y = (s-b);
             let z = (s-c);
-            setArea((Math.sqrt(s*x*y*z)).toFixed(2))
+            await setArea((Math.sqrt(s*x*y*z)).toFixed(2))
         }
         else {
             setArea("")
-            setText("Please enter correct sides, the sides of a triangle cannot be greater than or equal to its semi-perimeter")
+            await setText("Please enter correct sides, the sides of a triangle cannot be greater than or equal to its semi-perimeter")
         }
         }
         else{
             setArea("")
-            setText("Please enter sides greater than zero")
+            await setText("Please enter sides greater than zero")
         }
-        resultBox.current.scrollIntoView()
+        resultBox.current.scrollIntoView({"behavior":"smooth"})
     }
 
 

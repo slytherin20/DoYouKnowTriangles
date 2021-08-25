@@ -11,13 +11,13 @@ function FindTheSide(){
     function changeValue(e,side){
         side==="a"?setA(+e.target.value):setB(+e.target.value);
     }
-    function calculate(e){
+    async function calculate(e){
         e.preventDefault()
         let c = Math.sqrt((a**2)+(b**2));
         c = c.toFixed(2);
         setresult(c);
-        setText("Hypotenuse: ≈");
-        resultBox.current.scrollIntoView()
+        await setText("Hypotenuse: ≈");
+        resultBox.current.scrollIntoView({behavior:"smooth"})
     }
 
     return(

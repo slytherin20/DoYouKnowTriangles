@@ -13,17 +13,17 @@ function AreaThree(){
                   :(side==="b"?setB(Number(e.target.value)):setAngle(Number(e.target.value)))
     }
 
-    function calculateArea(e){
+    async function calculateArea(e){
         e.preventDefault();
         if(a>0 && b>0 && angle>0){
             setArea((a*b*0.5*Math.sin(angle*Math.PI/180)).toFixed(2))
-            setText("Area: ")
+            await setText("Area: ")
         }
         else{
             setArea("")
-            setText("Please enter correct sides and angle.")
+            await setText("Please enter correct sides and angle.")
         }
-        resultBox.current.scrollIntoView()
+        resultBox.current.scrollIntoView({behavior:"smooth"})
     }
 
 

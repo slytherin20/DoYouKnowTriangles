@@ -12,17 +12,17 @@ function AreaOne(){
                   :setHeight(Number(e.target.value))
     }
 
-    function calculateArea(e){
+    async function calculateArea(e){
         e.preventDefault()
         if(base>0 && height>0){
             setText("Area:")
-            setArea((base*height*0.5).toFixed(2))
+            await setArea((base*height*0.5).toFixed(2))
         }
         else{
             setArea("")
-            setText("Please enter correct base and height.")
+            await setText("Please enter correct base and height.")
         }
-        resultBox.current.scrollIntoView()
+        resultBox.current.scrollIntoView({behavior:"smooth"})
     }
 
 return(

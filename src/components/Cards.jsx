@@ -37,7 +37,6 @@ function Cards(){
         function changeIndex(){
             if(finalOption===QA[index].ans){
                 setScore(score+1)
-                console.log(score)
             }
             if(index===4){
                 moveIndex(5)

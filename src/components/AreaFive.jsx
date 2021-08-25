@@ -11,17 +11,17 @@ function AreaFive(){
                     :setB(Number(e.target.value))
     }
 
-    function calculateArea(e){
+    async function calculateArea(e){
         e.preventDefault();
         if(a>0 && b>0){
           setArea((b*Math.sqrt(4*(a**2)-(b**2))/4).toFixed(2))
-          setText("Area: ")
+          await setText("Area: ")
         }
         else{
             setArea("")
-            setText("Please enter correct sides.")
+            await setText("Please enter correct sides.")
         }
-        resultBox.current.scrollIntoView()
+        resultBox.current.scrollIntoView({behavior:"smooth"})
     }
 
 
